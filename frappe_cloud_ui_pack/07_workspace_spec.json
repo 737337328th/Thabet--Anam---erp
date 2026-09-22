@@ -1,0 +1,23 @@
+{
+  "name": "Thabet Anam Accounts",
+  "label": "حسابات ثابت أنعم",
+  "title": "حسابات ثابت أنعم",
+  "sections": [
+    {
+      "label": "الحركة اليومية",
+      "links": ["Payment Entry", "Journal Entry", "Purchase Invoice"]
+    },
+    {
+      "label": "العملاء والفواتير",
+      "links": ["Customer", "Sales Invoice", "Customer Ledger Summary"]
+    },
+    {
+      "label": "التقارير المالية",
+      "links": ["Trial Balance", "Profit and Loss Statement", "Balance Sheet", "General Ledger"]
+    },
+    {
+      "label": "الإعدادات",
+      "links": ["Account", "Cost Center", "Mode of Payment"]
+    }
+  ]
+}
