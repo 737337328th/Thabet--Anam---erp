@@ -31,3 +31,5 @@ jobs:
           bash -n deploy/free_local/*.sh
       - name: Ensure secrets are not committed
         run: test ! -f deploy/oracle/.secrets
+      - name: Financial safety guard
+        run: python scripts/financial_safety_guard.py
