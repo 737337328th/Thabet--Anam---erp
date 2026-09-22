@@ -1,0 +1,27 @@
+name: Static validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Compile Python
+        run: python -m compileall -q thabet_anam_v4
+      - name: Validate JSON
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          for p in Path("thabet_anam_v4").rglob("*.json"):
+              json.loads(p.read_text(encoding="utf-8"))
+          print("JSON OK")
+          PY
+      - name: Validate pyproject
+        run: python -c "import tomllib; tomllib.load(open('pyproject.toml','rb')); print('pyproject OK')"
