@@ -1,0 +1,5 @@
+item_code,item_name,item_group,stock_uom,is_stock_item,income_account_number,expense_account_number,selling_cost_center,buying_cost_center
+TA-SVC-CLEARANCE,أجور تخليص جمركي,خدمات ثابت أنعم,Nos,0,4101,5001,التخليص الجمركي,التخليص الجمركي
+TA-SVC-PERMIT,أجور التصاريح,خدمات ثابت أنعم,Nos,0,4102,5107,التصاريح,التصاريح
+TA-SVC-PRINT,أجور الطباعة,خدمات ثابت أنعم,Nos,0,4103,5206,الطباعة,الطباعة
+TA-SVC-FOLLOWUP,أجور متابعة المعاملات,خدمات ثابت أنعم,Nos,0,4104,5105,التخليص الجمركي,التخليص الجمركي
