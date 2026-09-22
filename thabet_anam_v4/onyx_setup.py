@@ -42,7 +42,23 @@ SERVICE_ITEMS = [
 ]
 
 
-def _company(company):
+def _resolve_company(company=None):
+    if company:
+        if frappe.db.exists("Company", company):
+            return company
+        frappe.throw(_("Company {0} does not exist").format(company))
+
+    companies = frappe.get_all("Company", pluck="name", limit=2)
+    if len(companies) == 1:
+        return companies[0]
+
+    frappe.throw(
+        _("Pass company explicitly when the site contains zero or multiple companies.")
+    )
+
+
+def _company(company=None):
+    company = _resolve_company(company)
     row = frappe.db.get_value(
         "Company",
         company,
@@ -226,8 +242,9 @@ def _ensure_service_item(company, code, label, income_no, expense_no, cc_label):
     }
 
 
-def status(company="Thabit Anam", currency="YER"):
+def status(company=None, currency="YER"):
     info = _company(company)
+    company = info.name
     missing = [
         number
         for number in REQUIRED_ACCOUNT_NUMBERS
@@ -251,7 +268,7 @@ def status(company="Thabit Anam", currency="YER"):
     }
 
 
-def apply(company="Thabit Anam", currency="YER"):
+def apply(company=None, currency="YER"):
     """
     Safe and idempotent foundation for the Onyx-style accounting plan.
 
@@ -259,6 +276,7 @@ def apply(company="Thabit Anam", currency="YER"):
     company currency, and never replaces an existing Chart of Accounts.
     """
     info = _company(company)
+    company = info.name
 
     if info.default_currency != currency:
         frappe.throw(
