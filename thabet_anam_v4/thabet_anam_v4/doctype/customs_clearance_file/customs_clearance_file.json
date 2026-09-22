@@ -1,0 +1,139 @@
+{
+  "doctype": "DocType",
+  "name": "Customs Clearance File",
+  "module": "Thabet Anam V4",
+  "autoname": "format:TA-CF-{YYYY}-{#####}",
+  "title_field": "customer",
+  "track_changes": 1,
+  "allow_rename": 0,
+  "is_submittable": 0,
+  "search_fields": "customer,importer_name,declaration_no,gateway_entry_no",
+  "fields": [
+    {
+      "fieldname": "status",
+      "label": "الحالة",
+      "fieldtype": "Select",
+      "options": "مسودة\nقيد العمل\nبانتظار مستندات\nجاهز للتخليص\nمغلق",
+      "default": "مسودة",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "label": "الشركة",
+      "fieldtype": "Link",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer",
+      "label": "العميل",
+      "fieldtype": "Link",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "importer_name",
+      "label": "اسم المستورد",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "gateway_entry_no",
+      "label": "رقم قيد البوابة",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "declaration_no",
+      "label": "رقم البيان",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "transport_count",
+      "label": "عدد وسائل النقل",
+      "fieldtype": "Int",
+      "default": "1"
+    },
+    {
+      "fieldname": "goods_type",
+      "label": "نوع البضاعة",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "transport_mode",
+      "label": "نوع النقل",
+      "fieldtype": "Select",
+      "options": "بري\nبحري\nجوي\nمختلط"
+    },
+    {
+      "fieldname": "invoice_reference",
+      "label": "الفاتورة",
+      "fieldtype": "Link",
+      "options": "Sales Invoice"
+    },
+    {
+      "fieldname": "documents_section",
+      "label": "المستندات",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "documents",
+      "label": "قائمة المستندات",
+      "fieldtype": "Table",
+      "options": "Customs Document Row"
+    },
+    {
+      "fieldname": "financial_section",
+      "label": "الربط المحاسبي",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "customer_balance",
+      "label": "رصيد العميل",
+      "fieldtype": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "label": "ملاحظات",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "share": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    },
+    {
+      "role": "Sales User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ]
+}
