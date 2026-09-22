@@ -17,8 +17,8 @@ FORBIDDEN_SUBSTRINGS = (
 
 quote = chr(96)
 FORBIDDEN_REGEX = (
-    re.compile(rf"(?is)\\b(?:insert|update|delete)\\s+(?:into\\s+|from\\s+)?{quote}?tabGL Entry{quote}?"),
-    re.compile(rf"(?is)\\b(?:insert|update|delete)\\s+(?:into\\s+|from\\s+)?{quote}?tabJournal Entry{quote}?"),
+    re.compile(rf"(?is)\b(?:insert|update|delete)\s+(?:into\s+|from\s+)?{quote}?tabGL Entry{quote}?"),
+    re.compile(rf"(?is)\b(?:insert|update|delete)\s+(?:into\s+|from\s+)?{quote}?tabJournal Entry{quote}?"),
 )
 
 violations = []
@@ -36,6 +36,6 @@ for path in ROOT.rglob("*.py"):
             )
 
 if violations:
-    raise SystemExit("\\n".join(violations))
+    raise SystemExit("\n".join(violations))
 
 print("Financial safety guard OK")
