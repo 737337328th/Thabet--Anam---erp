@@ -1,0 +1,3 @@
+print_format_name,doctype,source_file
+ثابت أنعم - فاتورة خدمات,Sales Invoice,thabet_anam_v4/onyx_print_formats.py
+ثابت أنعم - سند قبض وصرف,Payment Entry,thabet_anam_v4/onyx_print_formats.py
