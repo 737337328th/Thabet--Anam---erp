@@ -7,3 +7,8 @@ deploy/oracle/.secrets
 .idea/
 node_modules/
 .DS_Store
+deploy/free_local/.runtime/
+deploy/free_local/.secrets
+deploy/free_local/custom.env
+deploy/free_local/compose.custom.yaml
+deploy/free_local/backups/
