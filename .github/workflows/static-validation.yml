@@ -49,3 +49,6 @@ jobs:
         run: test ! -f deploy/oracle/.secrets
       - name: Financial safety guard
         run: python scripts/financial_safety_guard.py
+
+      - name: Frappe Cloud pure ERPNext guard
+        run: python scripts/frappe_cloud_pure_erpnext_guard.py
