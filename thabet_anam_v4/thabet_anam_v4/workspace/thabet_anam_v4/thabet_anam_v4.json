@@ -1,0 +1,24 @@
+{
+  "doctype": "Workspace",
+  "name": "Thabet Anam V4",
+  "label": "ثابت أنعم V4",
+  "title": "ثابت أنعم V4",
+  "module": "Thabet Anam V4",
+  "public": 1,
+  "is_hidden": 0,
+  "content": "[{\"id\": \"header\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'>ثابت أنعم للتخليص الجمركي</span>\", \"col\": 12}}, {\"id\": \"shortcut\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ملفات التخليص\", \"col\": 4}}]",
+  "shortcuts": [
+    {
+      "label": "ملفات التخليص",
+      "type": "DocType",
+      "link_to": "Customs Clearance File",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [],
+  "charts": [],
+  "number_cards": [],
+  "quick_lists": [],
+  "roles": []
+}
