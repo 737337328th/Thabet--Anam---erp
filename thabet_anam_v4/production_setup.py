@@ -25,10 +25,25 @@ REQUIRED_ACCOUNT_NUMBERS = [
 ]
 
 
-def _company_info(company):
+def _resolve_company(company=None):
+    if company:
+        if frappe.db.exists("Company", company):
+            return company
+        frappe.throw(_("Company {0} does not exist").format(company))
+
+    companies = frappe.get_all("Company", pluck="name", limit=2)
+    if len(companies) == 1:
+        return companies[0]
+
+    frappe.throw(
+        _("Pass company explicitly when the site contains zero or multiple companies.")
+    )
+
+
+def _company_info(company=None):
     row = frappe.db.get_value(
         "Company",
-        company,
+        _resolve_company(company),
         ["name", "abbr", "default_currency", "country"],
         as_dict=True,
     )
@@ -147,8 +162,9 @@ def _verify_accounts(company):
     return missing
 
 
-def status(company="Thabit Anam", currency="YER"):
+def status(company=None, currency="YER"):
     info = _company_info(company)
+    company = info.name
     missing_accounts = _verify_accounts(company)
     gl_count = frappe.db.count("GL Entry", {"company": company, "is_cancelled": 0})
 
@@ -165,13 +181,14 @@ def status(company="Thabit Anam", currency="YER"):
     }
 
 
-def apply(company="Thabit Anam", currency="YER"):
+def apply(company=None, currency="YER"):
     """
     Safe, idempotent operational setup.
     Does not overwrite the Chart of Accounts and does not post financial vouchers.
     Run only after the Chart of Accounts has been imported and verified.
     """
     info = _company_info(company)
+    company = info.name
 
     if info.default_currency != currency:
         frappe.throw(
