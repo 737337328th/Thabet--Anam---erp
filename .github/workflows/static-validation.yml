@@ -29,6 +29,22 @@ jobs:
         run: |
           bash -n deploy/oracle/*.sh
           bash -n deploy/free_local/*.sh
+      - name: Validate Windows launcher
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            "deploy/free_local/START_WINDOWS.ps1",
+            [ref]$tokens,
+            [ref]$errors
+          ) | Out-Null
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Error $_.Message }
+            exit 1
+          }
+      - name: Repository integrity check
+        run: python scripts/repo_integrity_check.py
       - name: Ensure secrets are not committed
         run: test ! -f deploy/oracle/.secrets
       - name: Financial safety guard
