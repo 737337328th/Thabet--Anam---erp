@@ -18,6 +18,7 @@ def unit_metrics(item_value=0, net_weight=0, additional_units=0):
 def document_readiness(clearance_file):
     """Read-only readiness summary for one customs file."""
     doc = frappe.get_doc("Customs Clearance File", clearance_file)
+    doc.check_permission("read")
     total = len(doc.documents or [])
     received = sum(1 for row in (doc.documents or []) if row.received)
     return {
