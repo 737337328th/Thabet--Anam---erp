@@ -24,7 +24,10 @@ if [[ ! -d "apps/$APP" ]]; then
   bench get-app "$REPO"
 fi
 
-bench --site "$SITE" install-app "$APP" || true
+if ! bench --site "$SITE" list-apps | grep -qx "$APP"; then
+  bench --site "$SITE" install-app "$APP"
+fi
+
 bench --site "$SITE" migrate
 bench --site "$SITE" list-apps
 bench --site "$SITE" execute thabet_anam_v4.production_check.run
