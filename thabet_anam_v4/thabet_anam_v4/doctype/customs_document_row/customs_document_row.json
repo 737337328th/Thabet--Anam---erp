@@ -1,0 +1,36 @@
+{
+  "doctype": "DocType",
+  "name": "Customs Document Row",
+  "module": "Thabet Anam V4",
+  "istable": 1,
+  "editable_grid": 1,
+  "track_changes": 0,
+  "fields": [
+    {
+      "fieldname": "document_type",
+      "label": "نوع المستند",
+      "fieldtype": "Select",
+      "options": "فاتورة الشراء\nPacking List\nشهادة المنشأ\nبوليصة الشحن\nالبيان الجمركي\nمستند آخر",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "received",
+      "label": "مستلم",
+      "fieldtype": "Check",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "attachment",
+      "label": "المرفق",
+      "fieldtype": "Attach",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "label": "ملاحظات",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": []
+}
