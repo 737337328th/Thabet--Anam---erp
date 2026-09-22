@@ -11,7 +11,17 @@
 
 Frappe v16 نفسها تتطلب Python 3.14 وNode 24 داخل بيئة Frappe، لكن مسار Docker يبني هذه البيئة داخل الحاوية ولا يطلب منك ضبطها يدويًا على Windows.
 
-## الطريقة الأسهل — بناء وتشغيل كامل
+## Windows — التشغيل الأسهل
+
+بعد توفر WSL2 وDocker داخل Ubuntu/WSL، افتح PowerShell داخل مجلد المشروع وشغّل:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File deploy/free_local/START_WINDOWS.ps1
+```
+
+إذا لم يكن WSL مثبتًا، سيعطيك المشغّل الأمر المطلوب لتثبيته بدل إجراء تغييرات صامتة على Windows.
+
+## Linux / WSL — بناء وتشغيل كامل
 
 من جذر هذا المستودع:
 
@@ -58,7 +68,19 @@ bash deploy/free_local/backup_local.sh
 deploy/free_local/backups/
 ```
 
-ويولد ملف SHA-256 للتحقق من سلامة النسخة.
+ويولد ملف SHA-256 ويتحقق منه فعليًا قبل اعتبار النسخة ناجحة. يحتفظ افتراضيًا بآخر **14 نسخة**، ويمكن تغيير ذلك مثلًا:
+
+```bash
+RETENTION_COUNT=30 bash deploy/free_local/backup_local.sh
+```
+
+## فحص صحة النظام
+
+```bash
+bash deploy/free_local/health_check.sh
+```
+
+هذا الفحص يعرض حالة الحاويات والتطبيقات المثبتة، وينفذ فحص V4 للقراءة فقط، ثم يختبر استجابة HTTP بدون إنشاء أي مستند مالي.
 
 ## إذا كان لديك Bench جاهز بالفعل
 
