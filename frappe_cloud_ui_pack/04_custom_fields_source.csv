@@ -1,0 +1,12 @@
+doctype,fieldname,label,fieldtype,insert_after,options,fetch_from,read_only
+Customer,ta_importer_name,اسم المستورد,Data,customer_name,,,0
+Customer,ta_customs_notes,ملاحظات التخليص,Small Text,ta_importer_name,,,0
+Sales Invoice,ta_customs_section,بيانات التخليص الجمركي,Section Break,customer_name,,,0
+Sales Invoice,ta_customs_file,ملف التخليص,Link,ta_customs_section,Customs Clearance File,,0
+Sales Invoice,ta_importer_name,اسم المستورد,Data,ta_customs_file,,ta_customs_file.importer_name,0
+Sales Invoice,ta_gateway_entry_no,رقم قيد البوابة,Data,ta_importer_name,,ta_customs_file.gateway_entry_no,0
+Sales Invoice,ta_declaration_no,رقم البيان,Data,ta_gateway_entry_no,,ta_customs_file.declaration_no,0
+Sales Invoice,ta_transport_count,عدد وسائل النقل,Int,ta_declaration_no,,ta_customs_file.transport_count,0
+Sales Invoice,ta_goods_type,نوع البضاعة,Data,ta_transport_count,,ta_customs_file.goods_type,0
+Payment Entry,ta_customs_file,ملف التخليص,Link,party,Customs Clearance File,,0
+Payment Entry,ta_reference_invoice,رقم الفاتورة المرجعية,Link,ta_customs_file,Sales Invoice,,0
