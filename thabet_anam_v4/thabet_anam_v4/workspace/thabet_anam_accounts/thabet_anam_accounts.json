@@ -1,0 +1,103 @@
+{
+  "doctype": "Workspace",
+  "name": "Thabet Anam Accounts",
+  "label": "حسابات ثابت أنعم",
+  "title": "حسابات ثابت أنعم",
+  "module": "Thabet Anam V4",
+  "public": 1,
+  "is_hidden": 0,
+  "icon": "landmark",
+  "indicator_color": "blue",
+  "content": "[{\"id\":\"h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class='h4'>حسابات ثابت أنعم — بأسلوب أونكس برو</span>\",\"col\":12}},{\"id\":\"s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"دليل الحسابات\",\"col\":3}},{\"id\":\"s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"العملاء\",\"col\":3}},{\"id\":\"s3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"الفواتير\",\"col\":3}},{\"id\":\"s4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"سندات القبض والصرف\",\"col\":3}},{\"id\":\"s5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"القيود اليومية\",\"col\":3}},{\"id\":\"s6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"مراكز التكلفة\",\"col\":3}},{\"id\":\"s7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ميزان المراجعة\",\"col\":3}},{\"id\":\"s8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"الأرباح والخسائر\",\"col\":3}},{\"id\":\"s9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"المركز المالي\",\"col\":3}},{\"id\":\"s10\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"دفتر الأستاذ\",\"col\":3}},{\"id\":\"s11\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"أرصدة العملاء\",\"col\":3}},{\"id\":\"s12\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"المصروفات\",\"col\":3}}]",
+  "shortcuts": [
+    {
+      "label": "دليل الحسابات",
+      "type": "DocType",
+      "link_to": "Account",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "العملاء",
+      "type": "DocType",
+      "link_to": "Customer",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "الفواتير",
+      "type": "DocType",
+      "link_to": "Sales Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "سندات القبض والصرف",
+      "type": "DocType",
+      "link_to": "Payment Entry",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "القيود اليومية",
+      "type": "DocType",
+      "link_to": "Journal Entry",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "مراكز التكلفة",
+      "type": "DocType",
+      "link_to": "Cost Center",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "ميزان المراجعة",
+      "type": "Report",
+      "link_to": "Trial Balance",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "الأرباح والخسائر",
+      "type": "Report",
+      "link_to": "Profit and Loss Statement",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "المركز المالي",
+      "type": "Report",
+      "link_to": "Balance Sheet",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "دفتر الأستاذ",
+      "type": "Report",
+      "link_to": "General Ledger",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "أرصدة العملاء",
+      "type": "Report",
+      "link_to": "Customer Ledger Summary",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "المصروفات",
+      "type": "DocType",
+      "link_to": "Purchase Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "links": [],
+  "charts": [],
+  "number_cards": [],
+  "quick_lists": [],
+  "roles": []
+}
