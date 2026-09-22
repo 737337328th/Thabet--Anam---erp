@@ -13,7 +13,7 @@ def get_customer_balance(customer, company):
 
     result = frappe.db.sql(
         """
-        select coalesce(sum(debit_in_account_currency - credit_in_account_currency), 0)
+        select coalesce(sum(debit - credit), 0)
         from `tabGL Entry`
         where party_type = 'Customer'
           and party = %s
