@@ -1,0 +1,340 @@
+{
+  "doctype": "Workspace",
+  "name": "Thabet Anam Accounts",
+  "label": "حسابات ثابت أنعم",
+  "title": "حسابات ثابت أنعم",
+  "module": "Thabet Anam V4",
+  "public": 1,
+  "is_hidden": 0,
+  "icon": "landmark",
+  "indicator_color": "blue",
+  "content": "[{\"id\":\"h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class='h4'>حسابات ثابت أنعم — واجهة محاسبية مبسطة</span>\",\"col\":12}},{\"id\":\"s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"دليل الحسابات\",\"col\":3}},{\"id\":\"s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"العملاء\",\"col\":3}},{\"id\":\"s3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"الفواتير\",\"col\":3}},{\"id\":\"s4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"سندات القبض والصرف\",\"col\":3}},{\"id\":\"s5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"القيود اليومية\",\"col\":3}},{\"id\":\"s6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"مراكز التكلفة\",\"col\":3}},{\"id\":\"s7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ميزان المراجعة\",\"col\":3}},{\"id\":\"s8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"الأرباح والخسائر\",\"col\":3}},{\"id\":\"s9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"المركز المالي\",\"col\":3}},{\"id\":\"s10\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"دفتر الأستاذ\",\"col\":3}},{\"id\":\"s11\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"أرصدة العملاء\",\"col\":3}},{\"id\":\"s12\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"المصروفات\",\"col\":3}}]",
+  "shortcuts": [
+    {
+      "label": "دليل الحسابات",
+      "type": "DocType",
+      "link_to": "Account",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "العملاء",
+      "type": "DocType",
+      "link_to": "Customer",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "الفواتير",
+      "type": "DocType",
+      "link_to": "Sales Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "سندات القبض والصرف",
+      "type": "DocType",
+      "link_to": "Payment Entry",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "القيود اليومية",
+      "type": "DocType",
+      "link_to": "Journal Entry",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "مراكز التكلفة",
+      "type": "DocType",
+      "link_to": "Cost Center",
+      "doc_view": "List",
+      "color": "Blue"
+    },
+    {
+      "label": "ميزان المراجعة",
+      "type": "Report",
+      "link_to": "Trial Balance",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "الأرباح والخسائر",
+      "type": "Report",
+      "link_to": "Profit and Loss Statement",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "المركز المالي",
+      "type": "Report",
+      "link_to": "Balance Sheet",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "دفتر الأستاذ",
+      "type": "Report",
+      "link_to": "General Ledger",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "أرصدة العملاء",
+      "type": "Report",
+      "link_to": "Customer Ledger Summary",
+      "doc_view": "",
+      "color": "Blue"
+    },
+    {
+      "label": "المصروفات",
+      "type": "DocType",
+      "link_to": "Purchase Invoice",
+      "doc_view": "List",
+      "color": "Blue"
+    }
+  ],
+  "sidebar_items": [
+    {
+      "child": 0,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "icon": "house",
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "الرئيسية",
+      "link_to": "Thabet Anam Accounts",
+      "link_type": "Workspace",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 0,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "icon": "book-open",
+      "indent": 1,
+      "keep_closed": 0,
+      "label": "الحركة اليومية",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Section Break"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "سندات القبض والصرف",
+      "link_to": "Payment Entry",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "القيود اليومية",
+      "link_to": "Journal Entry",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "المصروفات",
+      "link_to": "Purchase Invoice",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 0,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "icon": "users",
+      "indent": 1,
+      "keep_closed": 0,
+      "label": "العملاء والفواتير",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Section Break"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "العملاء",
+      "link_to": "Customer",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "فواتير الخدمات",
+      "link_to": "Sales Invoice",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "ملخص أرصدة العملاء",
+      "link_to": "Customer Ledger Summary",
+      "link_type": "Report",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 0,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "icon": "chart-no-axes-column",
+      "indent": 1,
+      "keep_closed": 0,
+      "label": "التقارير المالية",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Section Break"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "ميزان المراجعة",
+      "link_to": "Trial Balance",
+      "link_type": "Report",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "الأرباح والخسائر",
+      "link_to": "Profit and Loss Statement",
+      "link_type": "Report",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "المركز المالي",
+      "link_to": "Balance Sheet",
+      "link_type": "Report",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "دفتر الأستاذ",
+      "link_to": "General Ledger",
+      "link_type": "Report",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 0,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "icon": "settings",
+      "indent": 1,
+      "keep_closed": 1,
+      "label": "الإعدادات",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Section Break"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "دليل الحسابات",
+      "link_to": "Account",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "مراكز التكلفة",
+      "link_to": "Cost Center",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    },
+    {
+      "child": 1,
+      "collapsible": 1,
+      "default_workspace": 0,
+      "indent": 0,
+      "keep_closed": 0,
+      "label": "طرق الدفع",
+      "link_to": "Mode of Payment",
+      "link_type": "DocType",
+      "open_in_new_tab": 0,
+      "show_arrow": 0,
+      "type": "Link"
+    }
+  ],
+  "links": [],
+  "charts": [],
+  "number_cards": [],
+  "quick_lists": [],
+  "roles": []
+}
