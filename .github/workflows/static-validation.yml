@@ -19,9 +19,13 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import json
-          for p in Path("thabet_anam_v4").rglob("*.json"):
+          for p in Path(".").rglob("*.json"):
               json.loads(p.read_text(encoding="utf-8"))
           print("JSON OK")
           PY
       - name: Validate pyproject
         run: python -c "import tomllib; tomllib.load(open('pyproject.toml','rb')); print('pyproject OK')"
+      - name: Validate deployment scripts
+        run: bash -n deploy/oracle/*.sh
+      - name: Ensure secrets are not committed
+        run: test ! -f deploy/oracle/.secrets
