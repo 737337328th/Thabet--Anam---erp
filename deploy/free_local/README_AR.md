@@ -21,6 +21,14 @@ powershell -ExecutionPolicy Bypass -File deploy/free_local/START_WINDOWS.ps1
 
 إذا لم يكن WSL مثبتًا، سيعطيك المشغّل الأمر المطلوب لتثبيته بدل إجراء تغييرات صامتة على Windows.
 
+بعد فتح Ubuntu/WSL لأول مرة، جهّز المتطلبات المجانية بهذا الأمر:
+
+```bash
+bash deploy/free_local/prepare_ubuntu.sh
+```
+
+هذا يثبت Git وPython وDocker Engine وDocker Compose من مستودعات Ubuntu/Debian، ثم يضيف مستخدمك إلى مجموعة Docker عند الحاجة.
+
 ## Linux / WSL — بناء وتشغيل كامل
 
 من جذر هذا المستودع:
