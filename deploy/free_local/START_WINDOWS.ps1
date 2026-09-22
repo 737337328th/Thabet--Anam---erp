@@ -27,6 +27,16 @@ if (-not $wslPath) {
 }
 
 $escapedPath = $wslPath.Replace("'", "'\\''")
+$dockerCheck = & wsl.exe bash -lc "command -v docker >/dev/null 2>&1 && docker compose version >/dev/null 2>&1"
+if ($LASTEXITCODE -ne 0) {
+    Write-Host ""
+    Write-Host "Docker Engine/Compose is not ready inside WSL." -ForegroundColor Yellow
+    Write-Host "Run this command once in Ubuntu/WSL:"
+    Write-Host "  cd '$wslPath' && bash deploy/free_local/prepare_ubuntu.sh"
+    Write-Host "Then close/reopen WSL and run this launcher again."
+    exit 4
+}
+
 $command = "cd '$escapedPath' && bash deploy/free_local/docker_zero_cost.sh"
 
 Write-Host ""
